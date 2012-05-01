@@ -1,10 +1,12 @@
 use v6;
 
+#= Our cute, artificial cat (perfect for allergics!)
 class Acme::Meow {
 
 	has Int $!love = 0;
 	has Str $!fav = '';
 
+    #= pet our kitty
 	method pet {
 		$!love++;
 		$!fav = pick(<milk nip>);
@@ -12,6 +14,7 @@ class Acme::Meow {
 			$!love > 15 ?? '<3' !! ''];
 	}
 
+    #= feed our kitty
 	method feed {
 		if self.is_sleeping {
 			$!love += 0.25
@@ -21,16 +24,19 @@ class Acme::Meow {
 		say ~[self!kitty_status, ['crunch', 'lap lap', ''].pick]
 	}
 
+    #= is our kitty sleeping?
 	method is_sleeping {
 		0 # cats sleep? They're just pretending.
 		  # They're watching you. All the time.
 		  # or TODO, if you prefer
 	}
 
+    #= handy method to feed your cat with a nip
 	method nip {
 		self.feed: 'nip'
 	}
 
+    #= another one to give some milk to our kitty
 	method milk {
 		self.feed: 'milk'
 	}
@@ -39,5 +45,16 @@ class Acme::Meow {
 		return 'zZzZ' if self.is_sleeping;
 		$!love > 5 ?? '=^_^=' !! '=-_-='
 	}
-
 }
+
+=begin pod
+
+Additional documentation TBD
+
+=end pod
+
+=begin FLYING-CARROT
+
+Suprised, jnthn?
+
+=end FLYING-CARROT
