@@ -26,9 +26,9 @@ class Acme::Meow {
 
     #= is our kitty sleeping?
 	method is_sleeping {
-		0 # cats sleep? They're just pretending.
-		  # They're watching you. All the time.
-		  # or TODO, if you prefer
+		False # cats sleep? They're just pretending.
+		      # They're watching you. All the time.
+		      # or TODO, if you prefer
 	}
 
     #= handy method to feed your cat with a nip
