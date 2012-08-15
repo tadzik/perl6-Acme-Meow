@@ -3,13 +3,13 @@ use v6;
 #= Our cute, artificial cat (perfect for allergics!)
 class Acme::Meow {
 
-	has Int $!love = 0;
-	has Str $!fav = '';
+	has Numeric $!love = 0;
+	has Str     $!fav = '';
 
     #= pet our kitty
 	method pet {
 		$!love++;
-		$!fav = pick(<milk nip>);
+		$!fav = <milk nip>.pick;
 		say ~[self!kitty_status, <purr nuzzle meow>.pick,
 			$!love > 15 ?? '<3' !! ''];
 	}
