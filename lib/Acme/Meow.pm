@@ -15,13 +15,22 @@ class Acme::Meow {
 	}
 
     #= feed our kitty
-	method feed {
+	method feed($food?) {
 		if self.is_sleeping {
 			$!love += 0.25
 		} else {
 			$!love += 0.5
 		}
-		say ~[self!kitty_status, ['crunch', 'lap lap', ''].pick]
+		if $food.defined {
+			if $food eq 'nip' {
+				say ~[self!kitty_status, 'crunch']
+			}
+			elsif $food eq 'milk' {
+				say ~[self!kitty_status, 'lap lap']
+			}
+		} else {
+			say ~[self!kitty_status, ['crunch', 'lap lap', ''].pick]
+		}
 	}
 
     #= is our kitty sleeping?
